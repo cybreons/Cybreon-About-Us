@@ -17,19 +17,16 @@
             --glass-border: rgba(197, 204, 213, 0.1);
             --grid-size: 40px;
         }
-
         @font-face {
             font-family: 'Space Grotesk';
             src: url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Space Grotesk', sans-serif;
         }
-
         body {
             background-color: var(--black-bg);
             color: var(--muted-grey);
@@ -37,7 +34,6 @@
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
         }
-
         #neuralCanvas {
             position: fixed;
             top: 0;
@@ -48,7 +44,6 @@
             opacity: 0.8;
             touch-action: none;
         }
-
         .vignette {
             position: fixed;
             top: 0;
@@ -61,7 +56,6 @@
             opacity: 0.5;
             animation: scanline 8s linear infinite;
         }
-
         .grid {
             position: fixed;
             width: 100%;
@@ -75,7 +69,6 @@
             pointer-events: none;
             animation: gridFlicker 3s ease-in-out infinite;
         }
-
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -83,7 +76,6 @@
             position: relative;
             z-index: 2;
         }
-
         nav {
             display: flex;
             justify-content: space-between;
@@ -98,14 +90,12 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(197, 204, 213, 0.1);
         }
-
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
         }
-
         .logo {
             display: flex;
             align-items: center;
@@ -113,7 +103,6 @@
             text-decoration: none;
             perspective: 500px;
         }
-
         .logo img {
             width: 45px;
             height: 45px;
@@ -121,12 +110,10 @@
             box-shadow: 0 0 15px rgba(197, 204, 213, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .logo:hover img {
             transform: rotateY(10deg) scale(1.05);
             box-shadow: 0 0 25px rgba(0, 221, 235, 0.5);
         }
-
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
@@ -135,18 +122,15 @@
             text-shadow: 0 0 8px rgba(197, 204, 213, 0.5);
             transition: all 0.3s ease;
         }
-
         .logo:hover .logo-text {
             text-shadow: 0 0 15px rgba(0, 221, 235, 0.8);
             animation: glitch 0.5s ease-in-out;
         }
-
         .nav-links {
             display: flex;
             gap: 0.8rem;
             align-items: center;
         }
-
         .nav-links a {
             color: var(--muted-grey);
             text-decoration: none;
@@ -157,13 +141,11 @@
             border-radius: 4px;
             touch-action: manipulation;
         }
-
         .nav-links a:hover {
             background: rgba(0, 221, 235, 0.2);
             color: var(--silver-grey);
             transform: translateY(-2px);
         }
-
         .about-section {
             min-height: 100vh;
             display: flex;
@@ -172,7 +154,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .about-section::before {
             content: '';
             position: absolute;
@@ -186,7 +167,6 @@
             animation: gradientShift 15s ease infinite;
             z-index: -1;
         }
-
         .about-content {
             flex: 1;
             padding: 2rem;
@@ -197,7 +177,6 @@
             backdrop-filter: blur(8px);
             animation: fadeIn 1s ease-out;
         }
-
         .about-content h1 {
             font-size: 3rem;
             line-height: 1.1;
@@ -208,28 +187,24 @@
             text-shadow: 0 0 8px rgba(197, 204, 213, 0.6);
             animation: glow 2s ease-in-out infinite alternate;
         }
-
         .about-content h2 {
             font-size: 1.8rem;
             color: var(--silver-grey);
             margin-bottom: 1rem;
             text-shadow: 0 0 8px rgba(197, 204, 213, 0.4);
         }
-
         .about-content p {
             font-size: 1.1rem;
             color: var(--muted-grey);
             margin-bottom: 1.5rem;
             max-width: 800px;
         }
-
         .mission-vision {
             display: flex;
             gap: 2rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
-
         .mission, .vision {
             flex: 1;
             padding: 1.5rem;
@@ -238,16 +213,13 @@
             border: 1px solid var(--glass-border);
             min-width: 300px;
         }
-
         .beliefs {
             margin-top: 2rem;
         }
-
         .beliefs ul {
             list-style: none;
             padding: 0;
         }
-
         .beliefs li {
             font-size: 1.1rem;
             color: var(--muted-grey);
@@ -255,14 +227,12 @@
             padding-left: 1.5rem;
             position: relative;
         }
-
         .beliefs li::before {
             content: '➤';
             color: var(--neon-blue);
             position: absolute;
             left: 0;
         }
-
         .btn {
             padding: 0.8rem 2rem;
             font-size: 1rem;
@@ -277,7 +247,6 @@
             touch-action: manipulation;
             border: 1px solid var(--neon-blue);
         }
-
         .btn::before {
             content: '';
             position: absolute;
@@ -289,44 +258,36 @@
             transform: rotate(45deg);
             transition: all 0.3s ease;
         }
-
         .btn:hover::before {
             transform: rotate(45deg) translate(50%, 50%);
         }
-
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 0 25px rgba(0, 221, 235, 0.3);
             color: var(--neon-blue);
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes glow {
             0% { text-shadow: 0 0 8px rgba(197, 204, 213, 0.6), 0 0 15px rgba(197, 204, 213, 0.4); }
             100% { text-shadow: 0 0 12px rgba(197, 204, 213, 0.8), 0 0 20px rgba(197, 204, 213, 0.6); }
         }
-
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
         @keyframes scanline {
             0% { background-position: 0 0; }
             100% { background-position: 0 100px; }
         }
-
         @keyframes gridFlicker {
             0% { opacity: 0.2; }
             50% { opacity: 0.15; }
             100% { opacity: 0.2; }
         }
-
         @keyframes glitch {
             0% { transform: translate(0); }
             20% { transform: translate(-2px, 2px); }
@@ -335,7 +296,6 @@
             80% { transform: translate(2px, -2px); }
             100% { transform: translate(0); }
         }
-
         @media (max-width: 768px) {
             .about-content h1 { font-size: 2.5rem; }
             .about-section { padding: 4rem 0; }
@@ -346,7 +306,6 @@
             .about-content p { font-size: 0.95rem; }
             .mission, .vision { min-width: 100%; }
         }
-
         @media (max-width: 480px) {
             .about-content h1 { font-size: 2rem; }
             .container { padding: 0 10px; }
@@ -359,7 +318,6 @@
     <canvas id="neuralCanvas"></canvas>
     <div class="vignette"></div>
     <div class="grid"></div>
-
   <nav>
     <div class="container">
         <a href="https://cybreons.github.io/Cybreon-Homepagess/#" class="logo" target="_blank">
@@ -375,7 +333,6 @@
         </div>
     </div>
 </nav>
-
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-content">
@@ -383,7 +340,6 @@
                 <h2>🔹 The Minds Behind the Machine</h2>
                 <p>At Cybreon, we are driven by one bold vision: To build the future of human-AI synergy—where intelligence isn't just virtual, it's personal, powerful, and always evolving.</p>
                 <p>We’re a team of dreamers, builders, and boundary-breakers committed to creating a new kind of digital assistant—one that doesn’t just respond, but truly understands. One that doesn't just exist in code, but will one day live in silicon.</p>
-
                 <h2>🚧 Why We Built Cybreon</h2>
                 <p>We realized the world needed more than just chatbots or AI gimmicks. The future needed a Digital Brain 🧠—a core intelligence system that can:</p>
                 <ul class="beliefs">
@@ -393,7 +349,6 @@
                     <li>Think like a partner</li>
                 </ul>
                 <p>Cybreon is the answer. Born from a fusion of AI research, system automation, and human ambition, Cybreon is your on-device, privacy-respecting, task-dominating digital companion.</p>
-
                 <div class="mission-vision">
                     <div class="mission">
                         <h2>🔭 Our Mission</h2>
@@ -405,7 +360,6 @@
                         <p>We aim to turn Cybreon into a self-contained AI PCB chip 🛠️—a plug-and-play brain for robots, IoT, and futuristic devices. Imagine a world where intelligence is embedded in every machine—not through the cloud, but in real time, right at the edge.</p>
                     </div>
                 </div>
-
                 <h2>💡 Our Belief</h2>
                 <ul class="beliefs">
                     <li>Intelligence should be accessible</li>
@@ -413,15 +367,13 @@
                     <li>AI should empower, not replace</li>
                     <li>The future should be open, local, and human-centered</li>
                 </ul>
-
                 <h2>🌐 Join the Cybreon Revolution</h2>
                 <p>We're not just building tech. We're shaping the future of interaction. This is more than a product. This is a movement.</p>
-
-                <button class="btn" style="margin-top: 2rem;" onclick="window.open('https://cybreons.github.io/Cybreon-About-Us/', '_blank')">Join Our Journey</button>
+                <!-- Fixed: Changed button to anchor tag with href attribute -->
+                <a href="https://cybreons.github.io/Cybreon-Contact-us/" target="_blank" class="btn" style="margin-top: 2rem;">Join Our Journey</a>
             </div>
         </div>
     </section>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -429,17 +381,13 @@
         const connectionCount = isMobile ? 600 : 1200;
         const particleCount = isMobile ? 150 : 300;
         const pulseFrequency = isMobile ? 600 : 300;
-
         const canvas = document.getElementById('neuralCanvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });
-
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
-
         camera.position.z = isMobile ? 120 : 100;
-
         const nodes = [];
         const nodeGeometry = new THREE.SphereGeometry(isMobile ? 0.5 : 0.6, 12, 12);
         const nodeMaterial = new THREE.MeshBasicMaterial({
@@ -447,7 +395,6 @@
             transparent: true,
             opacity: 0.6
         });
-
         for (let i = 0; i < nodeCount; i++) {
             const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
             node.position.set(
@@ -460,7 +407,6 @@
             nodes.push(node);
             scene.add(node);
         }
-
         const connections = [];
         const connectionMaterial = new THREE.LineBasicMaterial({
             color: 0xc5ccd5,
@@ -468,7 +414,6 @@
             opacity: 0.3,
             linewidth: isMobile ? 1.5 : 2
         });
-
         for (let i = 0; i < connectionCount; i++) {
             const node1 = nodes[Math.floor(Math.random() * nodes.length)];
             const node2 = nodes[Math.floor(Math.random() * nodes.length)];
@@ -482,7 +427,6 @@
                 scene.add(line);
             }
         }
-
         const pulseGeometry = new THREE.SphereGeometry(isMobile ? 0.4 : 0.5, 8, 8);
         const pulseMaterialSilver = new THREE.MeshBasicMaterial({
             color: 0xc5ccd5,
@@ -495,7 +439,6 @@
             opacity: 0.8
         });
         const pulses = [];
-
         function createPulse(startNode, endNode) {
             const useBlue = Math.random() < 0.2;
             const pulse = new THREE.Mesh(pulseGeometry, useBlue ? pulseMaterialBlue : pulseMaterialSilver);
@@ -507,7 +450,6 @@
             scene.add(pulse);
             pulses.push(pulse);
         }
-
         setInterval(() => {
             const node1 = nodes[Math.floor(Math.random() * nodes.length)];
             const node2 = nodes[Math.floor(Math.random() * nodes.length)];
@@ -515,14 +457,12 @@
                 createPulse(node1, node2);
             }
         }, pulseFrequency);
-
         const glowMaterial = new THREE.PointsMaterial({
             color: 0xc5ccd5,
             size: isMobile ? 0.8 : 1.0,
             transparent: true,
             opacity: 0.7
         });
-
         const glowParticles = [];
         for (let i = 0; i < particleCount; i++) {
             const geometry = new THREE.BufferGeometry();
@@ -535,21 +475,17 @@
             glowParticles.push(particle);
             scene.add(particle);
         }
-
         const raycaster = new THREE.Raycaster();
         const pointer = new THREE.Vector2();
-
         function updatePointer(event) {
             const clientX = event.touches ? event.touches[0].clientX : event.clientX;
             const clientY = event.touches ? event.touches[0].clientY : event.clientY;
             pointer.x = (clientX / window.innerWidth) * 2 - 1;
             pointer.y = -(clientY / window.innerHeight) * 2 + 1;
         }
-
         if (!isMobile) {
             window.addEventListener('mousemove', updatePointer);
         }
-
         function handleInteraction(event) {
             event.preventDefault();
             updatePointer(event);
@@ -589,29 +525,22 @@
                 }, 1000);
             }
         }
-
         canvas.addEventListener(isMobile ? 'touchstart' : 'click', handleInteraction);
-
         let time = 0;
         function animate() {
             requestAnimationFrame(animate);
-
             time += isMobile ? 0.004 : 0.008;
-
             camera.position.x = Math.sin(time * (isMobile ? 0.04 : 0.08)) * (isMobile ? 100 : 80);
             camera.position.z = Math.cos(time * (isMobile ? 0.04 : 0.08)) * (isMobile ? 100 : 80);
             camera.lookAt(0, 0, 0);
-
             nodes.forEach((node, i) => {
                 node.material.opacity = node.baseOpacity + Math.sin(time * 2 + i * 0.1) * 0.15;
                 node.position.x += Math.sin(time + i) * node.distortion;
                 node.position.y += Math.cos(time + i) * node.distortion;
             });
-
             connections.forEach((line, i) => {
                 line.material.opacity = 0.3 + Math.sin(time * 1.5 + i * 0.05) * 0.1;
             });
-
             pulses.forEach((pulse, index) => {
                 pulse.progress += pulse.speed;
                 pulse.position.lerpVectors(pulse.startPos, pulse.endPos, pulse.progress);
@@ -621,7 +550,6 @@
                     pulses.splice(index, 1);
                 }
             });
-
             glowParticles.forEach((particle, index) => {
                 if (particle.progress !== undefined) {
                     particle.progress += 0.02;
@@ -635,7 +563,6 @@
                     particle.material.opacity = 0.7 + Math.sin(time * 2 + index * 0.1) * 0.2;
                 }
             });
-
             if (!isMobile) {
                 raycaster.setFromCamera(pointer, camera);
                 const intersects = raycaster.intersectObjects(nodes);
@@ -646,17 +573,14 @@
                     intersect.object.material.opacity = 1.0;
                 });
             }
-
             renderer.render(scene, camera);
         }
         animate();
-
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -665,7 +589,6 @@
                 });
             });
         });
-
         setInterval(() => {
             const headings = document.querySelectorAll('h1, h2, .logo-text');
             headings.forEach(heading => {
